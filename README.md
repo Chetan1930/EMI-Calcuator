@@ -1,12 +1,92 @@
-# React + Vite
+# 💸 Loan EMI & Prepayment Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple and responsive Loan Calculator built using **React** and **Tailwind CSS**. It helps users calculate:
 
-Currently, two official plugins are available:
+* Monthly EMI (Equated Monthly Installment)
+* Total Interest Payable
+* Total Repayment Amount
+  And also supports **optional prepayment calculation** to estimate how much interest you can save by making a lump-sum payment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Easy-to-use UI
+✅ EMI calculation based on loan amount, interest rate, and term
+✅ Optional prepayment input for accurate future planning
+✅ Instant interest savings report
+✅ Fully responsive & clean Tailwind UI
+
+---
+
+## 📸 Screenshot
+
+> *![alt text](image.png)
+ ![alt text](image-1.png)*
+
+---
+
+## 🧮 Formula Used
+
+**EMI Formula:**
+
+```
+EMI = [P × R × (1 + R)^N] / [(1 + R)^N – 1]
+```
+
+Where:
+
+* P = Loan Amount
+* R = Monthly Interest Rate
+* N = Loan Term in months
+
+---
+
+## 🔧 How to Run
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/Chetan1930/EMI-Calcuator.git
+cd loan-calculator
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the app:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔗 Live Demo
+
+> https://emi-c.netlify.app/
+
+---
+
+## 💡 Future Improvements
+
+* Option to reduce loan tenure instead of EMI on prepayment
+* Visualization with charts (EMI breakdown, interest timeline)
+* Export to PDF or CSV
+
+---
+
+## 📦 Tech Stack
+
+* ⚛️ React
+* 🎨 Tailwind CSS
+* 🧮 TypeScript
+
+---
+
+## 🧑‍💻 Author
+
+Made with ❤️ by [Chetan Chauhan](https://github.com/chetan1930)
