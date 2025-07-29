@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+}
+
+.calculator-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  color: #4f46e5;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #6366f140;
+}
+
+.input-group button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+  background-color: #4338ca;
+}
+
+.results {
+  margin-top: 20px;
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.results p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+details summary {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #4f46e5;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+table th, table td {
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #eef2ff;
+}
