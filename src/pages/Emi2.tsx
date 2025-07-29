@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const App: React.FC = () => {
-  const [loanAmount, setLoanAmount] = useState(33000);
-  const [interestRate, setInterestRate] = useState(38);
+  const [loanAmount, setLoanAmount] = useState(0);
+  const [interestRate, setInterestRate] = useState(34);
   const [loanTerm, setLoanTerm] = useState(12);
   const [prepaymentAmount, setPrepaymentAmount] = useState(0);
 

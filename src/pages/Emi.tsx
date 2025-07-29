@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const LoanCalculator: React.FC = () => {
-  const [principal, setPrincipal] = useState(33000);
-  const [rate, setRate] = useState(38);
+  const [principal, setPrincipal] = useState(0);
+  const [rate, setRate] = useState(34);
   const [tenure, setTenure] = useState(12);
   const [paidEMIs, setPaidEMIs] = useState(1);
   const [results, setResults] = useState<any>(null);
