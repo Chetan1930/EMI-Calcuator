@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
 
 const LoanCalculator: React.FC = () => {
-  const [principal, setPrincipal] = useState(0);
-  const [rate, setRate] = useState(34);
-  const [tenure, setTenure] = useState(12);
-  const [paidEMIs, setPaidEMIs] = useState(1);
+  const [principal, setPrincipal] = useState<string>('');
+  const [rate, setRate] = useState<string>('34');
+  const [tenure, setTenure] = useState<string>('12');
+  const [paidEMIs, setPaidEMIs] = useState<string>('1');
   const [results, setResults] = useState<any>(null);
 
   const calculate = () => {
-    const r = rate / 1200; // Monthly interest rate
-    const emi = (principal * r * Math.pow(1 + r, tenure)) / (Math.pow(1 + r, tenure) - 1);
-    const totalPayment = emi * tenure;
-    const totalInterest = totalPayment - principal;
+    const principalNum = parseFloat(principal);
+    const rateNum = parseFloat(rate);
+    const tenureNum = parseFloat(tenure);
+    const paidEMIsNum = parseFloat(paidEMIs);
 
-    let outstanding = principal;
+    if (isNaN(principalNum) || isNaN(rateNum) || isNaN(tenureNum) || isNaN(paidEMIsNum)) {
+      alert('Please fill all the fields with valid numbers.');
+      return;
+    }
+
+    const r = rateNum / 1200; // Monthly interest rate
+    const emi = (principalNum * r * Math.pow(1 + r, tenureNum)) / (Math.pow(1 + r, tenureNum) - 1);
+    const totalPayment = emi * tenureNum;
+    const totalInterest = totalPayment - principalNum;
+
+    let outstanding = principalNum;
     let schedule = [];
 
-    for (let i = 1; i <= tenure; i++) {
+    for (let i = 1; i <= tenureNum; i++) {
       const interest = outstanding * r;
       const principalPaid = emi - interest;
       outstanding -= principalPaid;
@@ -27,7 +37,7 @@ const LoanCalculator: React.FC = () => {
         principal: principalPaid,
         balance: Math.max(0, outstanding),
       });
-      if (i === paidEMIs) break;
+      if (i === paidEMIsNum) break;
     }
 
     setResults({
@@ -46,30 +56,30 @@ const LoanCalculator: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         <input
           type="number"
-          placeholder="Loan Amount (₹)"
+          placeholder="Enter Loan Amount (₹)"
           value={principal}
-          onChange={(e) => setPrincipal(Number(e.target.value))}
+          onChange={(e) => setPrincipal(e.target.value)}
           className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
         />
         <input
           type="number"
           placeholder="Annual Interest Rate (%)"
           value={rate}
-          onChange={(e) => setRate(Number(e.target.value))}
+          onChange={(e) => setRate(e.target.value)}
           className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
         />
         <input
           type="number"
-          placeholder="Tenure (months)"
+          placeholder="Loan Tenure (in months)"
           value={tenure}
-          onChange={(e) => setTenure(Number(e.target.value))}
+          onChange={(e) => setTenure(e.target.value)}
           className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
         />
         <input
           type="number"
-          placeholder="EMIs Paid"
+          placeholder="Number of EMIs Already Paid"
           value={paidEMIs}
-          onChange={(e) => setPaidEMIs(Number(e.target.value))}
+          onChange={(e) => setPaidEMIs(e.target.value)}
           className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"
         />
       </div>
