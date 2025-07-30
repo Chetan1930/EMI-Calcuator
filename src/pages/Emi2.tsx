@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const totalPayment = emi * loanTerm;
   const totalInterest = totalPayment - loanAmount;
 
-  // Prepayment Calculation
+  // Prepayment Calculation ( everthing is done now)
   const calculatePrepayment = () => {
     let remainingPrincipal = loanAmount;
     let interestPaid = 0;
